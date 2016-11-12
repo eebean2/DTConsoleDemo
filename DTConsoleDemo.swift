@@ -1,6 +1,6 @@
 //
 //  CCConsoleSample.swift
-//  ConsoleTest
+//  Version 1.0
 //
 //  Created by Erik Bean on 11/11/16.
 //  Copyright © 2016 Erik Bean. All rights reserved.
