@@ -1,5 +1,5 @@
 //
-//  CCConsoleSample.swift
+//  DTConsoleDemo.swift
 //  Version 1.0
 //
 //  Created by Erik Bean on 11/11/16.
@@ -11,7 +11,7 @@ import UIKit
 /// The method in which the console will print
 @available(iOS 7.0, *)
 public enum PrintMethodSample {
-    /// Prints to the CCConsole console only
+    /// Prints to the DTConsoleDemo console only
     case `default`
     /// Prints to both consoles
     case both
