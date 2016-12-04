@@ -22,7 +22,7 @@ public enum PrintMethodSample {
 @available(iOS 7.0, *)
 public class DTConsoleDemo {
     /// The Console
-    static let SharedInstance = DTConsoleDemo()
+    public static let SharedInstance = DTConsoleDemo()
     private var setupComplete = false
     private var visable = false
     private var console: UITextView?
@@ -34,13 +34,13 @@ public class DTConsoleDemo {
     ///
     /// - Parameters:
     ///     - view: The view you are attaching the console to
-    public func setup(in view: UIView) {
+    public func setupAndDisplay(in view: UIView, completion: ((Bool)->())?) {
         if Settings.liveOverride {
             SysOverride.prErr("Console is disabled in a live enviroment, to re-enable, in Xcode, change Console.Settings.liveOverride to false")
+            completion?(false)
             return
         }
-        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        console = UITextView(frame: frame)
+        console = UITextView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         console!.center = view.center
         console!.textColor = Settings.textColor
         #if os(iOS) || os(macOS)
@@ -48,28 +48,9 @@ public class DTConsoleDemo {
         #endif
         console!.backgroundColor = Settings.backgroundColor
         console!.text = "Welcome to \(Bundle.main.infoDictionary![kCFBundleNameKey as String]!)\n\n"
-        setupComplete = true
-    }
-    
-    /// Display the console as a popover
-    public func display() {
-        if !setupComplete {
-            SysConsole.prErr("You must complete setup first")
-            return
-        }
         view.addSubview(console!)
-        view.bringSubview(toFront: console!)
+        setupComplete = true
         visable = true
-    }
-    
-    /// Close the display
-    public func close() {
-        if !visable {
-            SysOverride.prErr("Console must be in view, call Console.display()")
-            return
-        }
-        console!.removeFromSuperview()
-        visable = false
     }
     
     /// Print a message in the console
