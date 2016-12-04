@@ -37,6 +37,7 @@ Now available here: https://github.com/eebean2/DTConsole
 Want more custimization? How about a popover? With the full version you get all that and more!
 
 ###Design
+ - Cocapod Support with 'Pod DTConsole'
  - Side console from left/right
  - Custom size
  - Gesture support
