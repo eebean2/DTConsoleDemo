@@ -32,7 +32,8 @@ Prining is as simple as calling `print` on the console. You have two options, `p
 
 You can also `printError()`, and the same with normal print, `printError(_:, method:)` to print to Xcode or both as well.
 
-#Full Version (coming soon)
+#Full Version
+Now available here: https://github.com/eebean2/DTConsole
 Want more custimization? How about a popover? With the full version you get all that and more!
 
 ###Design
@@ -49,5 +50,7 @@ Want more custimization? How about a popover? With the full version you get all 
 
 ###Options
  - Individual Width OR Height Override
+ - Starting Point Override
  - Gesture Support
  - Print a Warning Message
+ - Print a Diagnost Message
